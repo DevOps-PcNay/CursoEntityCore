@@ -17,6 +17,10 @@ namespace CursoEntityCore.Models
     public double Calificacion {  get; set; }
     [NotMapped]
     public int Edad {  get; set; }
+    [ForeignKey("DetalleUsuario")]
+    public int DetalleUsuario_Id { get; set; }
+    // Instanciando el Objeto "DetalleUsuario"
+    public DetalleUsuario DetalleUsuario { get; set; }
 
   }
 }
