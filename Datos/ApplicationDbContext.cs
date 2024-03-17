@@ -21,5 +21,15 @@ namespace CursoEntityCore.Datos
     public DbSet<Articulo> Articulo { get; set; }
 
     public DbSet<DetalleUsuario> DetalleUsuario { get; set; }
+
+    public DbSet<Etiqueta>Etiqueta{ get; set; }
+    // Se establece la relacion de Muchos a Muchos.
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+      // Es donde se define la llave compuesta.
+      modelBuilder.Entity<ArticuloEtiqueta>().HasKey(ae => new { ae.Etiqueta_Id, ae.Articulo_Id});
+    }
+
+
   } // public class ApplicationDbContext:DbContext
 }

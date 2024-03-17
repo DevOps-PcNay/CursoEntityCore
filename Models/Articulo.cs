@@ -25,5 +25,9 @@ namespace CursoEntityCore.Models
     // Se crea una referencia a "Categorias"
     public Categoria Categoria { get; set; }
 
+    // Para relacion de Muchos a Muchos 
+    public ICollection<ArticuloEtiqueta>ArticulEtiqueta { get; set; }
+
+
   }
 }
